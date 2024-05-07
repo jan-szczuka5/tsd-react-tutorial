@@ -1,0 +1,42 @@
+function TaskTwo() {
+  // TODO:
+
+  return (
+    <div className="flex items-center flex-col">
+      <h1>Task 2 - Basic Hooks</h1>
+      <div>
+        <p>
+          - Create logic for two counters. Each counter has an input field where
+          user can provide a number to increase the counter by that number.
+        </p>
+        <p>
+          - Counter 1: Whenever user increases the counter, the value should
+          update on the screen.
+        </p>
+        <p>
+          - Counter 2: Whenever user increases the counter, the value should not
+          update on the screen until next rerender, no matter how many times
+          user increased it.
+        </p>
+      </div>
+      <div className="flex gap-4 mt-12">
+        <div className="flex flex-col gap-2">
+          <h2>Counter: 0</h2>
+          <input className="border border-black" type="number" />
+          <button className="border border-black rounded-md py-2 w-[16rem] bg-gray-200 hover:bg-gray-300">
+            Increase counter 1
+          </button>
+        </div>
+        <div className="flex flex-col gap-2">
+          <h2>Counter: 0</h2>
+          <input className="border border-black" type="number" />
+          <button className="border border-black rounded-md py-2 w-[16rem] bg-gray-200 hover:bg-gray-300">
+            Increase counter 2
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default TaskTwo;
