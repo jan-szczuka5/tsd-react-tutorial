@@ -17,7 +17,7 @@ function TaskThree() {
         <p>
           - The form should have a submit button to log the data in the console.
         </p>
-        <p>- The form should have a rest button for resetting the data.</p>
+        <p>- The form should have a reset button for resetting the data.</p>
         <h2>Bonus:</h2>
         <p>- Password match validation.</p>
         <p>- Email format validation.</p>

@@ -1,12 +1,12 @@
 import { useState } from "react";
 import PostList from "./components/demo/components/postList";
-import Counter from "./components/demo/hooks/counter";
-import Input from "./components/demo/hooks/input";
+import Counter from "./components/demo/components/counter";
+import Input from "./components/demo/components/input";
 import Navbar from "./components/navbar";
 import TaskOne from "./components/tasks/task-1/taskOne";
 import TaskThree from "./components/tasks/task-3/taskThree";
 import TaskTwo from "./components/tasks/task-2/taskTwo";
-import AutoCounter from "./components/demo/hooks/autoCounter";
+import AutoCounter from "./components/demo/components/autoCounter";
 
 function App() {
   const [currentTab, setCurrentTab] = useState<string>("Demo");
