@@ -1,5 +1,21 @@
+import React, { useRef, useState } from "react";
+
 function TaskTwo() {
-  // TODO:
+  const firstInputRef = useRef<HTMLInputElement>(null);
+  const secondInputRef = useRef<HTMLInputElement>(null);
+
+  const [firstCounter, setFirstCounter] = useState(0);
+
+  function handleFirstCounter() {
+    if (!firstInputRef.current || !firstInputRef.current.value) return;
+
+    setFirstCounter(firstCounter + firstInputRef.current.valueAsNumber);
+  }
+
+  function handleSecondCounter() {
+    if (!secondInputRef.current || !secondInputRef.current.value) return;
+
+  }
 
   return (
     <div className="flex items-center flex-col">
@@ -21,16 +37,32 @@ function TaskTwo() {
       </div>
       <div className="flex gap-4 mt-12">
         <div className="flex flex-col gap-2">
-          <h2>Counter: 0</h2>
-          <input className="border border-black" type="number" />
-          <button className="border border-black rounded-md py-2 w-[16rem] bg-gray-200 hover:bg-gray-300">
+          <h2>Counter: {firstCounter}</h2>
+          <input
+            ref={firstInputRef}
+            className="border border-black"
+            type="number"
+            step="0.01"
+          />
+          <button
+            onClick={handleFirstCounter}
+            className="border border-black rounded-md py-2 w-[16rem] bg-gray-200 hover:bg-gray-300"
+          >
             Increase counter 1
           </button>
         </div>
         <div className="flex flex-col gap-2">
           <h2>Counter: 0</h2>
-          <input className="border border-black" type="number" />
-          <button className="border border-black rounded-md py-2 w-[16rem] bg-gray-200 hover:bg-gray-300">
+          <input
+            ref={secondInputRef}
+            className="border border-black"
+            type="number"
+            step="0.01"
+          />
+          <button
+            onClick={handleSecondCounter}
+            className="border border-black rounded-md py-2 w-[16rem] bg-gray-200 hover:bg-gray-300"
+          >
             Increase counter 2
           </button>
         </div>
