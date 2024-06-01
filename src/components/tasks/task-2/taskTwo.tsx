@@ -1,10 +1,11 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 function TaskTwo() {
   const firstInputRef = useRef<HTMLInputElement>(null);
   const secondInputRef = useRef<HTMLInputElement>(null);
 
   const [firstCounter, setFirstCounter] = useState(0);
+  const secondCounter = useRef(0);
 
   function handleFirstCounter() {
     if (!firstInputRef.current || !firstInputRef.current.value) return;
@@ -15,7 +16,8 @@ function TaskTwo() {
   function handleSecondCounter() {
     if (!secondInputRef.current || !secondInputRef.current.value) return;
 
-  }
+    secondCounter.current += secondInputRef.current.valueAsNumber;
+   }
 
   return (
     <div className="flex items-center flex-col">
@@ -34,40 +36,40 @@ function TaskTwo() {
           update on the screen until next rerender, no matter how many times
           user increased it.
         </p>
-      </div>
-      <div className="flex gap-4 mt-12">
-        <div className="flex flex-col gap-2">
-          <h2>Counter: {firstCounter}</h2>
-          <input
-            ref={firstInputRef}
-            className="border border-black"
-            type="number"
-            step="0.01"
-          />
-          <button
-            onClick={handleFirstCounter}
-            className="border border-black rounded-md py-2 w-[16rem] bg-gray-200 hover:bg-gray-300"
-          >
-            Increase counter 1
-          </button>
-        </div>
-        <div className="flex flex-col gap-2">
-          <h2>Counter: 0</h2>
-          <input
-            ref={secondInputRef}
-            className="border border-black"
-            type="number"
-            step="0.01"
-          />
-          <button
-            onClick={handleSecondCounter}
-            className="border border-black rounded-md py-2 w-[16rem] bg-gray-200 hover:bg-gray-300"
-          >
-            Increase counter 2
-          </button>
-        </div>
-      </div>
-    </div>
+	 	 	 </div>
+	 	 	 <div className="flex gap-4 mt-12">
+	 	 	 	 <div className="flex flex-col gap-2">
+	 	 	 	 	  <h2>Counter: {firstCounter}</h2>
+	 	 	 	 	  <input
+	 	 	 	 	 	  ref={firstInputRef}
+	 	 	 	 	 	  className="border border-black"
+	 	 	 	 	 	  type="number"
+	 	 	 	 	 	  step="0.01"
+	 	 	 	 	  />
+	 	 	 	 	  <button
+	 	 	 	 	 	  onClick={handleFirstCounter}
+	 	 	 	 	 	  className="border border-black rounded-md py-2 w-[16rem] bg-gray-200 hover:bg-gray-300"
+	 	 	 	 	  >
+	 	 	 	 	 	  Increase counter 1
+	 	 	 	 	  </button>
+	 	 	 	  </div>
+	 	 	 	  <div className="flex flex-col gap-2">
+            <h2>Counter: {secondCounter.current}</h2>
+            <input
+              ref={secondInputRef}
+	 	 	 	 	 	  className="border border-black"
+	 	 	 	 	 	  type="number"
+	 	 	 	 	 	  step="0.01"
+	 	 	 	 	  />
+	 	 	 	 	  <button
+              onClick={handleSecondCounter}
+	 	 	 	 	 	  className="border border-black rounded-md py-2 w-[16rem] bg-gray-200 hover:bg-gray-300"
+	 	 	 	 	  >
+              Increase counter 2
+	 	 	 	 	  </button>
+	 	 	 	  </div>
+	 	 	  </div>
+	 	  </div>
   );
 }
 
