@@ -42,7 +42,6 @@ function TaskTwo() {
             ref={firstInputRef}
             className="border border-black"
             type="number"
-            step="0.01"
           />
           <button
             onClick={handleFirstCounter}
@@ -57,7 +56,6 @@ function TaskTwo() {
             ref={secondInputRef}
             className="border border-black"
             type="number"
-            step="0.01"
           />
           <button
             onClick={handleSecondCounter}
