@@ -38,6 +38,40 @@ npm run dev
 - The component should display the list of posts in a card format. Each card should display the title and content of the post.
 - You can use the code from the demo.
 
+```typescript
+function PostList() {
+  // State to manage the list of posts
+  const [posts, setPosts] = useState<{ title: string; content: string; }[]>([]);
+
+  // State to manage the input values
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+
+  // Function to handle adding a new post
+  const addPost = () => {
+    // Create a new post object
+    const newPost = { title, content };
+
+    // Update the posts state with the new post
+    setPosts([...posts, newPost]);
+
+    // Clear the input fields
+    setTitle("");
+    setContent("");
+  };
+```
+
+```html
+ <div className="h-[30rem] w-[22rem] border border-black overflow-y-auto overflow-x-hidden p-4">
+        {/* Generate added posts here */}
+        <div className="space-y-2">
+          {posts.map((post, index) => (
+            <PostWithProps key={index} title={post.title} content={post.content} />
+          ))}
+        </div>
+      </div>
+```
+
 ### Task 2
 
 - Create logic for two counters. Each counter has an input field where user can provide a number to increase the counter by that number.
