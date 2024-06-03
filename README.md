@@ -63,13 +63,13 @@ function PostList() {
 
 ```html
  <div className="h-[30rem] w-[22rem] border border-black overflow-y-auto overflow-x-hidden p-4">
-        {/* Generate added posts here */}
-        <div className="space-y-2">
-          {posts.map((post, index) => (
-            <PostWithProps key={index} title={post.title} content={post.content} />
-          ))}
-        </div>
-      </div>
+  {/* Generate added posts here */}
+  <div className="space-y-2">
+    {posts.map((post, index) => (
+      <PostWithProps key={index} title={post.title} content={post.content} />
+    ))}
+  </div>
+</div>
 ```
 
 ### Task 2
